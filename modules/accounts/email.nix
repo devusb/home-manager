@@ -44,6 +44,13 @@ let
         '';
       };
 
+      command = mkOption {
+        type = with types; nullOr (either str path);
+        default = null;
+        example = "./signature.sh";
+        description = "A command that generates a signature.";
+      };
+
       showSignature = mkOption {
         type = types.enum [ "append" "attach" "none" ];
         default = "none";
